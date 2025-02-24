@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_db.EmployeePageContoller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="472.0" prefWidth="640.0" style="-fx-background-color: #343a40;" VBox.vgrow="ALWAYS">
+         <children>
+            <TabPane fx:id="tabbans" layoutX="315.0" prefHeight="700.0" prefWidth="985.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="315.0">
+              <tabs>
+                <Tab fx:id="Hometab" text="Welcome">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="200.0" style="-fx-background-color: #F0F0F0;">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#cfcecb" height="496.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" width="309.0" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="114.0" />
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="KHAKI" height="98.0" layoutX="148.0" layoutY="206.0" opacity="0.66" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <Label layoutX="157.0" layoutY="221.0" prefHeight="40.0" prefWidth="182.0" text="Number of Customer">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="KHAKI" height="98.0" layoutX="149.0" layoutY="396.0" opacity="0.66" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                              <Label layoutX="163.0" layoutY="411.0" prefHeight="40.0" prefWidth="173.0" text="Number of Vehicle">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <BarChart fx:id="chartEmployee" layoutX="435.0" layoutY="93.0" prefHeight="539.0" prefWidth="500.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="109.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                              <Label layoutX="149.0" layoutY="28.0" prefHeight="28.0" prefWidth="647.0" text="&quot;Welcome! We're here to support you in completing your tasks">
+                                 <font>
+                                    <Font name="Times New Roman Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="149.0" layoutY="56.0" prefHeight="28.0" prefWidth="578.0" text="efficient work environment.">
+                                 <font>
+                                    <Font name="Times New Roman Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="numberVehicle" layoutX="228.0" layoutY="451.0" prefHeight="28.0" prefWidth="43.0">
+                                 <font>
+                                    <Font name="Times New Roman Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="numberCustomer" layoutX="228.0" layoutY="261.0" prefHeight="28.0" prefWidth="43.0">
+                                 <font>
+                                    <Font name="Times New Roman Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="CustomerView" disable="true" text="Customer">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <TableView fx:id="customerTable" layoutY="164.0" prefHeight="400.0" prefWidth="960.0" style="-fx-background-color: white; -fx-text-fill: black;" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="196.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumncustomer" prefWidth="31.0" text="ID" />
+                                    <TableColumn fx:id="nameColumncustomer" prefWidth="121.0" text="Name" />
+                                    <TableColumn fx:id="phoneColumncustomer" prefWidth="108.0" text="phone num" />
+                                    <TableColumn fx:id="cityColumncustomer" prefWidth="40.0" text="City" />
+                                    <TableColumn fx:id="streetColumncustomer" prefWidth="40.0" text="Street" />
+                                    <TableColumn fx:id="apartmentNumColumncustomer" prefWidth="100.0" text="Apartment num" />
+                                    <TableColumn prefWidth="250.0" text="Rug">
+                                       <columns>
+                                          <TableColumn fx:id="rugSizeColumncustomer" prefWidth="35.0" text="size" />
+                                          <TableColumn fx:id="rugQuantityColumncustomer" prefWidth="55.0" text="Quantity" />
+                                          <TableColumn fx:id="rugStatusColumncustomer" prefWidth="40.0" text="status" />
+                                          <TableColumn fx:id="rugPriceColumncustomer" prefWidth="40.0" text="price" />
+                                          <TableColumn fx:id="rugDeliveryDateColumncustomer" text="delivery Date" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="Blanket">
+                                       <columns>
+                                          <TableColumn fx:id="blanketQuantityColumncustomer" prefWidth="55.0" text="Quantity" />
+                                          <TableColumn fx:id="blanketStatusColumncustomer" prefWidth="40.0" text="status" />
+                                          <TableColumn fx:id="blanketPriceColumncustomer" prefWidth="40.0" text="price" />
+                                          <TableColumn fx:id="blanketDeliveryDateColumncustomer" text="delivery Date" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="totalPriceColumncustomer" prefWidth="54.0" text="Pr.total" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="addc" layoutX="115.0" layoutY="615.0" mnemonicParsing="false" onAction="#addcc" prefHeight="36.0" prefWidth="190.0" style="-fx-background-color: #8a8338;" text="Add Information" underline="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="71.0">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.41" specularExponent="34.25" surfaceScale="2.76">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Button>
+                              <Button fx:id="updatec" layoutX="398.0" layoutY="621.0" mnemonicParsing="false" onAction="#updatecc" prefHeight="36.0" prefWidth="190.0" style="-fx-background-color: #8a8338;" text="Update Information" underline="true">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.41" specularExponent="34.25" surfaceScale="2.76">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Button>
+                              <Button fx:id="deletec" layoutX="735.0" layoutY="621.0" mnemonicParsing="false" onAction="#deletecc" prefHeight="36.0" prefWidth="190.0" style="-fx-background-color: #8a8338;" text="Delete Information" underline="true">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.41" specularExponent="34.25" surfaceScale="2.76">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Button>
+                              <Rectangle fx:id="RRR1" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="100.0" layoutX="443.0" layoutY="28.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #39424e; -fx-text-fill: white;" width="100.0" AnchorPane.leftAnchor="443.0" />
+                              <Label layoutX="373.0" layoutY="136.0" prefHeight="40.0" prefWidth="240.0" style="-fx-text-fill: white;" text="Data of Customer">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="453.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@database-info-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="Customeredittab" disable="true" text="ABD_customer ">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#cfcecb" height="600.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #39424e; -fx-text-fill: white;" width="300.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="36.0" />
+                              <Label layoutX="95.0" layoutY="98.0" style="-fx-text-fill: white;" text="Adding Customer" AnchorPane.topAnchor="98.0">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane fx:id="addingcustomer" layoutX="35.0" layoutY="135.0">
+                                 <children>
+                                    <TextField fx:id="FNameadd" layoutX="30.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="F.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="SNameadd" layoutX="105.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="S.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="LNameadd" layoutX="181.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="L.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="CsPhoneNumadd" layoutX="28.0" layoutY="62.0" prefHeight="0.0" promptText="Cs. phone Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Streetadd" layoutX="136.0" layoutY="119.0" prefHeight="0.0" prefWidth="120.0" promptText="Street" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Cityadd" layoutY="118.0" prefHeight="0.0" prefWidth="120.0" promptText="City" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="ApartmentNumadd" layoutX="36.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" promptText="Apartment Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Rugsizeadd" layoutX="32.0" layoutY="231.0" prefHeight="30.0" prefWidth="200.0" promptText="Rug.Size" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugQuntityadd" layoutX="7.0" layoutY="288.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.Quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugStatusadd" layoutX="8.0" layoutY="340.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugPriceadd" layoutX="7.0" layoutY="392.0" prefHeight="0.0" prefWidth="120.0" promptText="Rug.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketQuntityadd" layoutX="143.0" layoutY="288.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketStatusadd" layoutX="144.0" layoutY="340.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="17.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketPriceadd" layoutX="143.0" layoutY="392.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <Button fx:id="AddCustomerButton" layoutX="55.400001525878906" layoutY="447.4000244140625" mnemonicParsing="false" onAction="#AddCustomerController" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #39424e;" text="Add Information" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="Artifakt Element Black Italic" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="137.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@add-user-2-512.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#cfcecb" height="600.0" layoutX="343.0" layoutY="36.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #39424e; -fx-text-fill: white;" width="300.0" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="36.0" />
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#cfcecb" height="600.0" layoutX="661.0" layoutY="28.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #39424e; -fx-text-fill: white;" width="300.0" AnchorPane.leftAnchor="661.0" AnchorPane.topAnchor="36.0" />
+                              <Pane fx:id="updatingcustomer" layoutX="358.0" layoutY="135.0">
+                                 <children>
+                                    <TextField fx:id="FNameupdate" layoutX="30.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="F.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="SNameupdate" layoutX="105.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="S.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="LNameupdate" layoutX="181.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="L.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Streetupdate" layoutX="136.0" layoutY="129.0" prefHeight="0.0" prefWidth="120.0" promptText="Street" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Cityupdate" layoutY="128.0" prefHeight="0.0" prefWidth="120.0" promptText="City" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Rugsizeupdate" layoutX="36.0" layoutY="174.0" prefHeight="30.0" prefWidth="200.0" promptText="Rug.Size" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugQuntityupdate" layoutX="7.0" layoutY="219.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.Quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugStatusupdate" layoutX="7.0" layoutY="264.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugPriceupdate" layoutX="7.0" layoutY="307.0" prefHeight="0.0" prefWidth="120.0" promptText="Rug.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketQuntityupdate" layoutX="143.0" layoutY="219.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketStatusupdate" layoutX="143.0" layoutY="264.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="17.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketPriceupdate" layoutX="143.0" layoutY="307.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <DatePicker fx:id="deliverydateRug" layoutX="7.0" layoutY="354.0" prefHeight="30.0" prefWidth="120.0" promptText="Delivery Date" style="-fx-background-color: #39424e; -fx-border-color: #39424e; -fx-text-fill: black;" />
+                                    <DatePicker fx:id="deliverydateBlanket" layoutX="143.0" layoutY="354.0" prefHeight="30.0" prefWidth="120.0" promptText="Delivery Date" style="-fx-background-color: #39424e; -fx-border-color: #39424e; -fx-text-fill: black;" />
+                                    <TextField fx:id="TotalPriceupdate" layoutX="61.0" layoutY="395.0" prefHeight="0.0" prefWidth="150.0" promptText="Total Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <Button fx:id="AddCustomerButton1" layoutY="447.4000244140625" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #39424e;" text="Update Information" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="Artifakt Element Black Italic" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="Searchupdate" layoutX="200.0" layoutY="446.0" mnemonicParsing="false" onAction="#searchCustomerUpdate" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #39424e;" text="Search" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="Artifakt Element Black Italic" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                    <TextField fx:id="ApartmentNumupdate" layoutX="33.20001220703125" layoutY="84.19999694824219" prefHeight="30.0" prefWidth="200.0" promptText="Apartment Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="CsPhoneNumupdate" layoutX="141.20001220703125" prefHeight="0.0" prefWidth="120.0" promptText="phone Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="CustomerIDupdate" layoutX="5.20001220703125" prefHeight="30.0" prefWidth="120.0" promptText="Customer ID" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="406.0" layoutY="98.0" style="-fx-text-fill: white;" text="Updating Customer">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="466.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="466.0" AnchorPane.topAnchor="48.0">
+                                 <image>
+                                    <Image url="@edit-user-512.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane fx:id="deleteingcustomer" layoutX="675.0" layoutY="135.0">
+                                 <children>
+                                    <TextField fx:id="FNamedelete" layoutX="30.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="F.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="SNamedelete" layoutX="105.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="S.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="LNamedelete" layoutX="181.0" layoutY="41.0" prefHeight="30.0" prefWidth="60.0" promptText="L.Name" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="13.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Streetdelete" layoutX="136.0" layoutY="129.0" prefHeight="0.0" prefWidth="120.0" promptText="Street" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Citydelete" layoutY="128.0" prefHeight="0.0" prefWidth="120.0" promptText="City" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="Rugsizedelete" layoutX="36.0" layoutY="174.0" prefHeight="30.0" prefWidth="200.0" promptText="Rug.Size" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugQuntitydelete" layoutX="7.0" layoutY="219.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.Quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugStatusdelete" layoutX="7.0" layoutY="264.0" prefHeight="30.0" prefWidth="120.0" promptText="Rug.status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="RugPricedelete" layoutX="7.0" layoutY="307.0" prefHeight="0.0" prefWidth="120.0" promptText="Rug.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketQuntitydelete" layoutX="143.0" layoutY="219.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.quantity" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketStatusdelete" layoutX="143.0" layoutY="264.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Status" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="17.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="BlanketPricedelete" layoutX="143.0" layoutY="307.0" prefHeight="30.0" prefWidth="120.0" promptText="Blanket.Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <DatePicker fx:id="deliverydateRug" layoutX="7.0" layoutY="354.0" prefHeight="30.0" prefWidth="120.0" promptText="Delivery Date" style="-fx-background-color: #39424e; -fx-border-color: #39424e; -fx-text-fill: black;" />
+                                    <DatePicker fx:id="deliverydateBlanket" layoutX="143.0" layoutY="354.0" prefHeight="30.0" prefWidth="120.0" promptText="Delivery Date" style="-fx-background-color: #39424e; -fx-border-color: #39424e; -fx-text-fill: black;" />
+                                    <TextField fx:id="TotalPriceadd11" layoutX="61.0" layoutY="395.0" prefHeight="0.0" prefWidth="150.0" promptText="Total Price" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <Button fx:id="DeleteCustomerButton" layoutY="447.0" mnemonicParsing="false" onAction="#DeleteCustomer" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #39424e;" text="Delete Information" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="Artifakt Element Black Italic" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="SearchCustomerButton" layoutX="200.0" layoutY="446.0" mnemonicParsing="false" onAction="#searchCustomerdelete" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #39424e;" text="Search" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font name="Artifakt Element Black Italic" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                    <TextField fx:id="ApartmentNumdelete" layoutX="33.0" layoutY="84.0" prefHeight="30.0" prefWidth="200.0" promptText="Apartment Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="CsPhoneNumdelete" layoutX="141.0" prefHeight="0.0" prefWidth="120.0" promptText="phone Number" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                    <TextField fx:id="CustomerIDdelete" layoutX="5.0" prefHeight="30.0" prefWidth="120.0" promptText="Customer ID" style="-fx-background-color: #39424e; -fx-text-fill: white;">
+                                       <font>
+                                          <Font name="Calibri Italic" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <Lighting diffuseConstant="2.0" specularConstant="0.5" specularExponent="40.0" surfaceScale="2.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="777.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="777.0">
+                                 <image>
+                                    <Image url="@remove-user-512.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="717.0" layoutY="98.0" style="-fx-text-fill: white;" text="Deleting Customer" AnchorPane.leftAnchor="721.0">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="VehicleView" disable="true" text="vehicle">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <TableView fx:id="VehicleTable" layoutX="210.0" layoutY="188.0" prefHeight="400.0" prefWidth="538.0" style="-fx-background-color: white; -fx-text-fill: black;" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="188.0">
+                                 <columns>
+                                    <TableColumn fx:id="Vehicleidcolumn" prefWidth="130.0" text="Vehicle ID" />
+                                    <TableColumn fx:id="registraionnumbercolumn" prefWidth="130.0" text="Registraion Number" />
+                                    <TableColumn fx:id="Modelcolumn" prefWidth="130.0" text="Model" />
+                                    <TableColumn fx:id="purchasedatecolumn" prefWidth="149.0" text="Purches Date" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="reservecarButton" layoutX="297.0" layoutY="611.0" mnemonicParsing="false" onAction="#reservecar" prefHeight="36.0" prefWidth="400.0" style="-fx-background-color: #8a8338;" text="Reserve a vehicle" underline="true" AnchorPane.leftAnchor="297.0" AnchorPane.topAnchor="611.0">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.41" specularExponent="34.25" surfaceScale="2.76">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Button>
+                              <Label layoutX="387.0" layoutY="129.0" prefHeight="40.0" prefWidth="211.0" style="-fx-text-fill: white;" text="Data of Vehicle">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle fx:id="RRR11" arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="100.0" layoutX="442.0" layoutY="29.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" style="-fx-background-color: #39424e; -fx-text-fill: white;" width="100.0" />
+                              <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="452.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@database-info-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="Vehicleedittab" disable="true" text="BS.vehicle">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#cfcecb" height="561.0" layoutX="278.0" layoutY="55.0" opacity="0.48" stroke="BLACK" strokeType="INSIDE" width="430.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="55.0" />
+                              <Label layoutX="404.0" layoutY="182.0" prefHeight="23.0" prefWidth="178.0" style="-fx-text-fill: white;" text="Reserve A Vehicle" AnchorPane.topAnchor="182.0">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="vehicleid" alignment="CENTER" layoutX="368.0" layoutY="246.0" prefHeight="34.0" prefWidth="250.0" promptText="Vehicle ID" style="-fx-background-color: #39424e; -fx-text-fill: white;" AnchorPane.leftAnchor="368.0" AnchorPane.topAnchor="246.0">
+                                 <font>
+                                    <Font name="Calibri Italic" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.52" specularExponent="40.0" surfaceScale="1.96">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </TextField>
+                              <TextField fx:id="employeeid" alignment="CENTER" layoutX="368.0" layoutY="326.0" prefHeight="34.0" prefWidth="250.0" promptText="Employee ID" style="-fx-background-color: #39424e; -fx-text-fill: white;" AnchorPane.topAnchor="326.0">
+                                 <font>
+                                    <Font name="Calibri Italic" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="2.0" specularConstant="0.52" specularExponent="40.0" surfaceScale="1.96">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </TextField>
+                              <DatePicker fx:id="datereservationcar" layoutX="368.0" layoutY="404.0" prefHeight="35.0" prefWidth="250.0" promptText="Date of vehicle reservation" style="-fx-background-color: #39424e; -fx-border-color: #39424e; -fx-text-fill: black;" AnchorPane.topAnchor="404.0" />
+                              <Button fx:id="reservationButton" layoutX="343.0" layoutY="499.0" mnemonicParsing="false" onAction="#reservation" prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #39424e;" text="reservation" textFill="WHITE" underline="true" AnchorPane.topAnchor="499.0">
+                                 <font>
+                                    <Font name="Artifakt Element Black Italic" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Button>
+                              <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="448.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@car-rental_6686694%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#555555" height="619.0" layoutX="14.0" layoutY="47.0" stroke="BLACK" strokeType="INSIDE" width="290.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="31.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadada" height="150.0" layoutX="79.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="157.0" />
+            <Button fx:id="VehicleButton" layoutX="32.0" layoutY="368.0" mnemonicParsing="false" onAction="#VehicleButtonDash" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f0e68c; -fx-background-radius: 25px;" text="Vehicle">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="LogoutButton" layoutX="32.0" layoutY="435.0" mnemonicParsing="false" onAction="#LogoutButtonDash" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f0e68c; -fx-background-radius: 25px;" text="Log out" AnchorPane.topAnchor="435.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="CustomerButton" layoutX="32.0" layoutY="301.0" mnemonicParsing="false" onAction="#customerButtonDash" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f0e68c; -fx-background-radius: 25px;" text="Customer">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="HomeButton" layoutX="32.0" layoutY="235.0" mnemonicParsing="false" onAction="#HomeButtonDash" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #f0e68c; -fx-background-radius: 25px;" text="Home">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="136.0" layoutX="90.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dashboard.png" />
+               </image>
+            </ImageView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
